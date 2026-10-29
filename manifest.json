@@ -1,0 +1,10 @@
+{
+  "name": "ATHLETE MODE",
+  "short_name": "Athlete Mode",
+  "description": "Muscle, strength, speed and power training tracker",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d120f",
+  "theme_color": "#101510",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

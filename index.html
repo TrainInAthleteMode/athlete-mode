@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101510">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>ATHLETE MODE</title>
+<style>
+:root{--bg:#0d120f;--panel:#171f19;--panel2:#202a22;--lime:#c5f36b;--text:#f5f7f2;--muted:#a8b2a6;--line:#303b31;--orange:#ffb56b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 calc(84px + env(safe-area-inset-bottom));}button,input,select{font:inherit}button{cursor:pointer}
+header{padding:22px 18px 16px;background:linear-gradient(150deg,#202b20,#101510 72%);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}.bolt{background:var(--lime);color:#101510;border-radius:13px;width:43px;height:43px;display:grid;place-items:center;font-size:25px;font-weight:900}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);font-weight:800}.brand h1{font-size:21px;letter-spacing:1.3px;margin:2px 0 0}.tag{font-size:12px;color:var(--muted);margin-top:3px}.topline{display:flex;align-items:center;justify-content:space-between;margin-top:22px}.topline h2{font-size:25px;margin:0}.pill{font-size:11px;color:var(--lime);border:1px solid #51663c;border-radius:99px;padding:7px 10px;font-weight:750}
+main{padding:16px;max-width:720px;margin:auto}.hero{border-radius:20px;padding:19px;background:linear-gradient(135deg,#263b25,#17221a);border:1px solid #394c35}.hero small{color:var(--lime);font-weight:800;letter-spacing:1.2px}.hero h2{font-size:27px;line-height:1.1;margin:9px 0}.hero p{font-size:13px;line-height:1.5;color:#c6d0c3;margin:0 0 16px}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:800;background:var(--lime);color:#152012}.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn.ghost{background:transparent;color:var(--lime);border:1px solid #53664a}.btn.small{padding:9px 11px;font-size:12px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:23px 0 11px}.sectionhead h3{font-size:16px;margin:0}.muted{color:var(--muted);font-size:12px}.days{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.day{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 5px;text-align:center;color:var(--text)}.day strong{display:block;font-size:12px}.day span{font-size:10px;color:var(--muted);display:block;margin-top:5px}.day.active{border-color:var(--lime);background:#253421}.day.active span{color:var(--lime)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:14px;margin-bottom:10px}.cardtop{display:flex;gap:12px;align-items:center}.num{width:39px;height:39px;flex-shrink:0;border-radius:12px;background:var(--panel2);display:grid;place-items:center;color:var(--lime);font-weight:900}.exname{font-weight:800;font-size:14px}.exmeta{font-size:11px;color:var(--muted);margin-top:4px}.right{margin-left:auto;text-align:right}.done{accent-color:var(--lime);width:22px;height:22px}.exercise-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.instructions{display:none;color:#c6d0c3;font-size:13px;line-height:1.55;border-top:1px solid var(--line);margin-top:12px;padding-top:11px}.instructions.open{display:block}.instructions b{color:var(--lime)}.progressbar{height:7px;background:#2a342b;border-radius:9px;overflow:hidden;margin:11px 0 4px}.progressbar div{height:100%;background:var(--lime);width:0%;transition:width .2s}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:var(--panel);border:1px solid var(--line);padding:13px;border-radius:14px}.stat strong{display:block;font-size:23px}.stat span{font-size:10px;color:var(--muted)}.tabbar{position:fixed;z-index:5;bottom:0;left:0;right:0;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#111712f5;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}.tab{border:0;background:transparent;color:var(--muted);font-size:10px;padding:6px 0}.tab .ico{font-size:20px;display:block;margin-bottom:3px}.tab.active{color:var(--lime);font-weight:800}.view{display:none}.view.active{display:block}.timerbox{text-align:center;padding:22px}.time{font-size:55px;font-variant-numeric:tabular-nums;font-weight:850;letter-spacing:1px;margin:15px 0}.timer-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.field{width:100%;background:#101611;border:1px solid var(--line);border-radius:10px;padding:11px;color:var(--text);margin:6px 0 12px}.videoitem{display:flex;align-items:center;gap:10px}.videoitem input{max-width:100%}.note{font-size:12px;color:var(--muted);line-height:1.5}.empty{padding:20px;text-align:center;color:var(--muted);font-size:13px}.tag2{font-size:10px;color:var(--orange);font-weight:800;letter-spacing:.8px}
+@media(min-width:600px){main{padding:22px}.hero h2{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="bolt">ϟ</div><div><div class="eyebrow">STRENGTH • SPEED • POWER</div><h1>ATHLETE MODE</h1><div class="tag">Your training. Your progress.</div></div></div>
+ <div class="topline"><h2 id="hello">Ready to train?</h2><div class="pill">4-DAY SPLIT</div></div>
+</header>
+<main>
+<section id="workoutView" class="view active">
+ <div class="hero"><small id="heroDay">MONDAY • UPPER POWER</small><h2 id="heroTitle">Build strength.<br>Move explosively.</h2><p id="heroDesc">Explosive work first, strength work next, accessories last. Keep every rep controlled.</p><button class="btn" onclick="startWorkout()">Start workout →</button></div>
+ <div class="sectionhead"><h3>Your training week</h3><span class="muted">Tap a day</span></div>
+ <div class="days" id="dayButtons"></div>
+ <div class="sectionhead"><h3 id="sessionHeading">Monday · Upper Power</h3><span class="muted" id="completedLabel">0 / 7 done</span></div>
+ <div class="progressbar"><div id="sessionBar"></div></div>
+ <div id="exerciseList"></div>
+ <div class="card"><div class="sectionhead" style="margin:0 0 8px"><h3>Session notes</h3><span class="tag2">OPTIONAL</span></div><textarea id="notes" class="field" rows="3" placeholder="How did it feel? Record weights or notes..." oninput="saveNotes()"></textarea><button class="btn secondary small" onclick="saveSession()">Save workout</button></div>
+</section>
+<section id="progressView" class="view">
+ <div class="sectionhead"><h3>Your progress</h3><span class="muted">Saved on this device</span></div>
+ <div class="stats"><div class="stat"><strong id="statSessions">0</strong><span>SESSIONS SAVED</span></div><div class="stat"><strong id="statSets">0</strong><span>EXERCISES TICKED</span></div><div class="stat"><strong id="statDays">0/4</strong><span>WEEKLY SPLIT</span></div></div>
+ <div class="sectionhead"><h3>Exercise log</h3></div><div id="logList"></div>
+ <div class="card"><h3 style="margin-top:0">Reset progress</h3><p class="note">This clears saved checklists, notes and workout history on this device.</p><button class="btn ghost small" onclick="resetProgress()">Reset all progress</button></div>
+</section>
+<section id="timerView" class="view">
+ <div class="sectionhead"><h3>Rest timer</h3><span class="muted">Between sets</span></div>
+ <div class="card timerbox"><div class="tag2">RECOVER • RESET • GO</div><div class="time" id="timerDisplay">01:30</div><div class="timer-controls"><button class="btn secondary small" onclick="setTimer(60)">60 sec</button><button class="btn secondary small" onclick="setTimer(90)">90 sec</button><button class="btn secondary small" onclick="setTimer(180)">3 min</button></div><div class="timer-controls" style="margin-top:14px"><button class="btn" id="timerToggle" onclick="toggleTimer()">Start timer</button><button class="btn ghost" onclick="resetTimer()">Reset</button></div><p class="note" id="timerHint">For jumps and throws, rest until you're ready to move fast with good technique.</p></div>
+ <div class="card"><h3 style="margin-top:0">Suggested rest</h3><p class="note">Explosive jumps/throws: 1–3 minutes or until fully ready. Main lifts: 2–3 minutes. Accessories: 60–120 seconds. Adjust to your effort and technique.</p></div>
+</section>
+<section id="videosView" class="view">
+ <div class="sectionhead"><h3>Offline video library</h3><span class="muted">On this device</span></div>
+ <div class="card"><h3 style="margin-top:0">Add your own demonstration video</h3><p class="note">Choose a video file saved in your iPhone Files app. This prototype stores selected video files in the browser's local database for offline playback when storage permits. Large videos use lots of space; keep your phone's storage available.</p><input id="videoFile" class="field" type="file" accept="video/*"><input id="videoTitle" class="field" placeholder="Exercise name (e.g. box jump)"><button class="btn" onclick="saveVideo()">Save video offline</button><p class="note" id="videoStatus"></p></div>
+ <div id="videoList"></div>
+ <div class="card"><h3 style="margin-top:0">Find technique demonstrations</h3><p class="note">Online searches need internet. Use these search links to find reliable demonstrations, then only save videos you have permission to download.</p><div id="searchLinks"></div></div>
+</section>
+</main>
+<nav class="tabbar">
+ <button class="tab active" data-tab="workoutView" onclick="showTab('workoutView',this)"><span class="ico">▦</span>Workout</button>
+ <button class="tab" data-tab="progressView" onclick="showTab('progressView',this)"><span class="ico">↗</span>Progress</button>
+ <button class="tab" data-tab="timerView" onclick="showTab('timerView',this)"><span class="ico">◷</span>Rest timer</button>
+ <button class="tab" data-tab="videosView" onclick="showTab('videosView',this)"><span class="ico">▷</span>Videos</button>
+</nav>
+<script>
+const workouts=[
+ {day:"MON",label:"Monday",title:"Upper Power",desc:"Chest, back, shoulders and arms",items:[
+  ["Medicine-ball chest throw","3 × 5","Power","Throw explosively from your chest into a safe open space. Reset between reps; use a light ball."],
+  ["Bench press","3 × 6–8","Strength","Keep feet planted, shoulder blades stable and lower the bar under control. Use a spotter and suitable load."],
+  ["Lat pulldown or assisted pull-up","3 × 8","Back","Pull elbows down toward your sides; avoid swinging or pulling behind your neck."],
+  ["Incline dumbbell press","3 × 8–12","Chest","Keep wrists stacked over elbows and lower the weights with control."],
+  ["Seated cable row","3 × 8–12","Back","Sit tall and pull toward your lower ribs without rocking your torso."],
+  ["Lateral raise","2 × 12–15","Shoulders","Use light weights, lift smoothly to a comfortable height and avoid swinging."],
+  ["Biceps curl + triceps pushdown","2 × 10–12 each","Arms","Keep elbows fairly still; control both the lifting and lowering phases."]]},
+ {day:"TUE",label:"Tuesday",title:"Lower Power",desc:"Jumps, sprint mechanics and leg strength",items:[
+  ["Vertical jumps","3 × 3","Plyometrics","Jump upward with intent, land quietly with knees aligned over feet, then reset fully."],
+  ["Broad jumps","3 × 3","Plyometrics","Jump forward, land balanced with soft knees and hold the landing before resetting."],
+  ["Short accelerations","4 × 10–20 m","Speed","Use a clear, flat, non-slip space. Build speed progressively; walk back and fully recover."],
+  ["Squat","3 × 6–8","Strength","Brace your trunk, keep your whole foot grounded and squat only as deep as you can control."],
+  ["Romanian deadlift","3 × 8","Hamstrings / glutes","Hinge at the hips with a soft knee bend, keep weights close and maintain a neutral back."],
+  ["Calf raise","3 × 12","Calves","Rise smoothly onto the balls of your feet and lower slowly through a comfortable range."],
+  ["Wall tibialis raise","2 × 12–20","Shins","Lean against a wall and lift toes toward your shins while heels stay down."]]},
+ {day:"THU",label:"Thursday",title:"Upper Strength",desc:"Upper-body strength and muscle",items:[
+  ["Medicine-ball rotational throw","3 × 4 each side","Power","Rotate through hips and trunk and throw into a clear safe area. Use a light ball; don't force the range."],
+  ["Shoulder press","3 × 6–8","Shoulders","Brace your core and press in a pain-free range without arching your lower back."],
+  ["Chest-supported row","3 × 8–10","Back","Keep chest supported and draw elbows back without shrugging."],
+  ["Incline dumbbell press","3 × 8–12","Chest","Lower under control and stop if you feel pain."],
+  ["Lat pulldown","3 × 8–12","Back","Pull toward the upper chest with control; don't jerk or swing."],
+  ["Rear-delt fly","2 × 12–15","Shoulders","Use light weights and move arms out with a slight bend in the elbows."],
+  ["Hammer curl + triceps extension","2 × 10–12 each","Arms / forearms","Use controlled reps. Pick a comfortable range and stop if elbows hurt."]]},
+ {day:"FRI",label:"Friday",title:"Lower Strength",desc:"Legs, glutes, core and athletic movement",items:[
+  ["Box jump","3 × 3","Plyometrics","Use a low, stable box and step down carefully. Land quietly; don't jump down. Skip if unsure."],
+  ["Trap-bar deadlift or goblet squat","3 × 5–8","Strength","Learn the movement with a qualified coach and light load before progressing."],
+  ["Bulgarian split squat","2 × 8 each leg","Quads / glutes","Use a stable stance, lower under control and hold support if balance is tricky."],
+  ["Leg curl","3 × 10–12","Hamstrings","Move smoothly and avoid bouncing the weight."],
+  ["Hip thrust or glute bridge","2 × 8–12","Glutes","Keep ribs down, drive through feet and stop at a comfortable hip extension."],
+  ["Reverse crunch","3 × 10–15","Abs","Curl pelvis gently toward ribs without swinging your legs."],
+  ["Plank + calf raise","2–3 sets","Core / calves","For planks, keep a straight line and breathe. Do calf raises slowly and with control."]]}
+];
+let selected=0, checks=JSON.parse(localStorage.getItem("am_checks")||"{}"), notes=JSON.parse(localStorage.getItem("am_notes")||"{}"), logs=JSON.parse(localStorage.getItem("am_logs")||"[]");
+function key(){return workouts[selected].day}
+function persist(){localStorage.setItem("am_checks",JSON.stringify(checks));localStorage.setItem("am_notes",JSON.stringify(notes));localStorage.setItem("am_logs",JSON.stringify(logs))}
+function renderDays(){document.getElementById("dayButtons").innerHTML=workouts.map((w,i)=>`<button class="day ${i===selected?'active':''}" onclick="selectDay(${i})"><strong>${w.day}</strong><span>${w.title}</span></button>`).join("")}
+function renderWorkout(){const w=workouts[selected];document.getElementById("heroDay").textContent=w.label.toUpperCase()+" • "+w.title.toUpperCase();document.getElementById("heroTitle").innerHTML=w.title.includes("Upper")?"Build strength.<br>Move explosively.":"Build power.<br>Move with control.";document.getElementById("heroDesc").textContent=w.desc+". Start with explosive drills while fresh; stop if technique or landing quality drops.";document.getElementById("sessionHeading").textContent=w.label+" · "+w.title;document.getElementById("notes").value=notes[key()]||"";document.getElementById("exerciseList").innerHTML=w.items.map((e,i)=>{let id=key()+"_"+i,done=!!checks[id];return `<div class="card"><div class="cardtop"><div class="num">${String(i+1).padStart(2,"0")}</div><div><div class="exname">${e[0]}</div><div class="exmeta">${e[1]} · ${e[2]}</div></div><div class="right"><input class="done" type="checkbox" aria-label="Mark ${e[0]} complete" ${done?"checked":""} onchange="toggleCheck('${id}',this.checked)"></div></div><div class="exercise-actions"><button class="btn secondary small" onclick="toggleInstructions('${id}')">How to do it</button><button class="btn ghost small" onclick="searchExercise('${encodeURIComponent(e[0])}')">Find video ↗</button><button class="btn secondary small" onclick="setTimer(${e[2]==='Plyometrics'||e[2]==='Power'||e[2]==='Speed'?150:90});showTab('timerView',document.querySelector('[data-tab=timerView]'))">Rest timer</button></div><div class="instructions" id="ins_${id}"><b>Technique:</b> ${e[3]}<br><br><b>Reminder:</b> Warm up first, use manageable loads, and ask a qualified coach to check unfamiliar movements.</div></div>`}).join("");updateProgress();renderDays()}
+function selectDay(i){selected=i;renderWorkout()}
+function toggleCheck(id,v){checks[id]=v;persist();updateProgress()}
+function toggleInstructions(id){document.getElementById("ins_"+id).classList.toggle("open")}
+function updateProgress(){let w=workouts[selected],count=w.items.filter((e,i)=>checks[key()+"_"+i]).length;document.getElementById("completedLabel").textContent=count+" / "+w.items.length+" done";document.getElementById("sessionBar").style.width=(100*count/w.items.length)+"%";renderStats()}
+function startWorkout(){document.getElementById("exerciseList").scrollIntoView({behavior:"smooth",block:"start"})}
+function saveNotes(){notes[key()]=document.getElementById("notes").value;persist()}
+function saveSession(){saveNotes();let existing=logs.find(x=>x.day===key());if(existing){existing.date=new Date().toLocaleDateString();existing.done=workouts[selected].items.filter((e,i)=>checks[key()+"_"+i]).length;existing.total=workouts[selected].items.length;existing.note=notes[key()]||""}else logs.unshift({day:key(),label:workouts[selected].label,title:workouts[selected].title,date:new Date().toLocaleDateString(),done:workouts[selected].items.filter((e,i)=>checks[key()+"_"+i]).length,total:workouts[selected].items.length,note:notes[key()]||""});persist();renderStats();alert("Workout saved on this device.")}
+function renderStats(){document.getElementById("statSessions").textContent=logs.length;document.getElementById("statSets").textContent=Object.values(checks).filter(Boolean).length;document.getElementById("statDays").textContent=workouts.filter(w=>logs.some(l=>l.day===w.day)).length+"/4";document.getElementById("logList").innerHTML=logs.length?logs.map(l=>`<div class="card"><div class="cardtop"><div class="num">✓</div><div><div class="exname">${l.label} · ${l.title}</div><div class="exmeta">${l.date} · ${l.done}/${l.total} exercises ticked</div></div></div>${l.note?`<p class="note">${escapeHtml(l.note)}</p>`:""}</div>`).join(""):'<div class="empty">No workouts saved yet. Tick off exercises and tap “Save workout” when you finish.</div>'}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function showTab(id,btn){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".tab").forEach(v=>v.classList.remove("active"));(btn||document.querySelector(`[data-tab="${id}"]`)).classList.add("active");if(id==="progressView")renderStats();if(id==="videosView")renderVideos()}
+function searchExercise(q){window.open("https://www.youtube.com/results?search_query="+q+"+exercise+demonstration","_blank","noopener")}
+document.getElementById("searchLinks").innerHTML=["Box jump","Medicine ball chest throw","Romanian deadlift","Tibialis raise","Bulgarian split squat"].map(n=>`<p><a style="color:var(--lime)" href="https://www.youtube.com/results?search_query=${encodeURIComponent(n+" exercise tutorial")}" target="_blank" rel="noopener">${n} demonstration ↗</a></p>`).join("");
+// Rest timer
+let timerSeconds=90,timerInterval=null,timerEnd=0;function displayTimer(){let s=timerSeconds;document.getElementById("timerDisplay").textContent=String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function setTimer(s){clearInterval(timerInterval);timerInterval=null;timerSeconds=s;document.getElementById("timerToggle").textContent="Start timer";displayTimer()}
+function toggleTimer(){if(timerInterval){clearInterval(timerInterval);timerInterval=null;document.getElementById("timerToggle").textContent="Resume timer";return}timerEnd=Date.now()+timerSeconds*1000;document.getElementById("timerToggle").textContent="Pause timer";timerInterval=setInterval(()=>{timerSeconds=Math.max(0,Math.ceil((timerEnd-Date.now())/1000));displayTimer();if(timerSeconds<=0){clearInterval(timerInterval);timerInterval=null;document.getElementById("timerToggle").textContent="Start timer";document.getElementById("timerHint").textContent="Rest complete — continue when you're ready.";if("vibrate" in navigator)navigator.vibrate([150,100,150]);}},250)}
+function resetTimer(){setTimer(90);document.getElementById("timerHint").textContent="For jumps and throws, rest until you're ready to move fast with good technique."}
+function resetProgress(){if(confirm("Clear all saved progress on this device?")){checks={};notes={};logs=[];persist();renderWorkout();renderStats()}}
+/* Offline video file storage with IndexedDB */
+let db;function openDB(){return new Promise((resolve,reject)=>{let req=indexedDB.open("AthleteModeVideos",1);req.onupgradeneeded=()=>req.result.createObjectStore("videos",{keyPath:"id",autoIncrement:true});req.onsuccess=()=>{db=req.result;resolve(db)};req.onerror=()=>reject(req.error)})}
+async function saveVideo(){let f=document.getElementById("videoFile").files[0],title=document.getElementById("videoTitle").value.trim();if(!f){document.getElementById("videoStatus").textContent="Choose a video file first.";return}if(f.size>250*1024*1024&&!confirm("This video is over 250 MB and may use a lot of storage. Save it anyway?"))return;try{await openDB();let tx=db.transaction("videos","readwrite");tx.objectStore("videos").add({title:title||f.name,name:f.name,type:f.type,blob:f,size:f.size});tx.oncomplete=()=>{document.getElementById("videoStatus").textContent="Saved. Keep this browser's website data; clearing it may remove saved videos.";document.getElementById("videoFile").value="";document.getElementById("videoTitle").value="";renderVideos()};tx.onerror=()=>document.getElementById("videoStatus").textContent="Could not save video. Check available device storage."}catch(e){document.getElementById("videoStatus").textContent="Offline storage isn't available in this preview environment. Try running the app from a hosted HTTPS website."}}
+async function renderVideos(){let el=document.getElementById("videoList");try{await openDB();let tx=db.transaction("videos","readonly"),req=tx.objectStore("videos").getAll();req.onsuccess=()=>{let arr=req.result;el.innerHTML=arr.length?arr.map(v=>`<div class="card"><div class="exname">${escapeHtml(v.title)}</div><div class="exmeta">${(v.size/1024/1024).toFixed(1)} MB · saved video</div><div class="exercise-actions"><button class="btn secondary small" onclick="playVideo(${v.id})">Play offline</button><button class="btn ghost small" onclick="deleteVideo(${v.id})">Delete</button></div><div id="player_${v.id}"></div></div>`).join(""):'<div class="empty">No saved videos yet. Add a video file above to try offline playback.</div>'}}catch(e){el.innerHTML='<div class="empty">Video storage works best when this app is hosted securely (HTTPS). The other workout tools still work in this prototype.</div>'}}
+async function playVideo(id){await openDB();let tx=db.transaction("videos","readonly"),req=tx.objectStore("videos").get(id);req.onsuccess=()=>{let v=req.result;if(!v)return;let url=URL.createObjectURL(v.blob);document.getElementById("player_"+id).innerHTML=`<video controls playsinline style="width:100%;margin-top:12px;border-radius:12px" src="${url}"></video>`}}
+async function deleteVideo(id){await openDB();let tx=db.transaction("videos","readwrite");tx.objectStore("videos").delete(id);tx.oncomplete=renderVideos}
+renderDays();renderWorkout();renderStats();displayTimer();renderVideos();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+</script>
+</body>
+</html>
